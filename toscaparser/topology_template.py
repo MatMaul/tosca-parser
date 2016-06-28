@@ -251,7 +251,7 @@ class TopologyTemplate(object):
                                                            value)
                 if node_template.get_capabilities_objects():
                     for cap in node_template.get_capabilities_objects():
-                        if cap.get_properties_objects():
+                        if (cap.name == 'host' or cap.name == 'os') and cap.get_properties_objects():
                             for prop in cap.get_properties_objects():
                                 propvalue = functions.get_function(
                                     self,
